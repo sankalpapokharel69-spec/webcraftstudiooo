@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WebCraft Studio — Premium Web Design & Development</title>
+
+  <!-- SEO -->
+  <meta name="description" content="WebCraft Studio crafts premium, high-performance websites — design, development, e-commerce and SEO. Browse live projects and get in touch." />
+  <meta name="author" content="WebCraft Studio" />
+  <meta name="theme-color" content="#0a0e1a" />
+  <meta property="og:title" content="WebCraft Studio" />
+  <meta property="og:description" content="Premium web design & development studio." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="logo.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="logo.jpg" />
+
+  <!-- Google Font: Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Prevent theme flash before CSS paints -->
+  <script>try{const t=localStorage.getItem('wc-theme');if(t)document.documentElement.dataset.theme=t;}catch(e){}</script>
+</head>
+<body>
+
+  <!-- Skip link (a11y) -->
+  <a href="#home" class="skip-link">Skip to content</a>
+
+  <!-- Preloader -->
+  <div id="preloader" aria-hidden="true">
+    <img src="logo.jpg" alt="" class="pre-logo" />
+    <div class="spinner" role="status" aria-label="Loading"></div>
+  </div>
+
+  <!-- Scroll progress bar -->
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- ============ NAVBAR ============ -->
+  <header class="navbar" id="navbar">
+    <nav class="nav-inner container" aria-label="Main navigation">
+      <a href="#home" class="brand">
+        <img src="logo.jpg" alt="WebCraft Studio logo" class="brand-logo" />
+        <span class="brand-name">WebCraft<em>Studio</em></span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a class="nav-link active" href="#home">Home</a></li>
+        <li><a class="nav-link" href="#about">About</a></li>
+        <li><a class="nav-link" href="#services">Services</a></li>
+        <li><a class="nav-link" href="#projects">Projects</a></li>
+        <li><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button id="theme-toggle" class="icon-btn" aria-label="Toggle light/dark theme">
+          <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+
+        <!-- Guest state -->
+        <div class="auth-guest nav-auth">
+          <button class="btn btn-ghost btn-sm" data-auth="login">Login</button>
+          <button class="btn btn-primary btn-sm" data-auth="register">Register</button>
+        </div>
+
+        <!-- Signed-in state -->
+        <div class="auth-user nav-auth hidden">
+          <button class="btn btn-ghost btn-sm owner-only hidden" data-panel="inbox">Inbox <span class="inbox-badge hidden"></span></button>
+          <button class="btn btn-ghost btn-sm owner-only hidden" data-panel="admin">Admin</button>
+          <div class="user-chip" title="Your account">
+            <span class="user-initials"></span>
+            <img class="user-avatar hidden" alt="" />
+            <span class="user-name"></span>
+          </div>
+          <button class="btn btn-ghost btn-sm" data-action="logout">Logout</button>
+        </div>
+
+        <button id="hamburger" class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="mobile-menu">
+    <a class="nav-link" href="#home">Home</a>
+    <a class="nav-link" href="#about">About</a>
+    <a class="nav-link" href="#services">Services</a>
+    <a class="nav-link" href="#projects">Projects</a>
+    <a class="nav-link" href="#contact">Contact</a>
+    <div class="mobile-menu-divider"></div>
+    <div class="auth-guest">
+      <button class="btn btn-ghost" data-auth="login">Login</button>
+      <button class="btn btn-primary" data-auth="register">Register</button>
+    </div>
+    <div class="auth-user hidden">
+      <div class="user-chip"><span class="user-initials"></span><img class="user-avatar hidden" alt="" /><span class="user-name"></span></div>
+      <button class="btn btn-ghost owner-only hidden" data-panel="inbox">Inbox <span class="inbox-badge hidden"></span></button>
+      <button class="btn btn-ghost owner-only hidden" data-panel="admin">Admin</button>
+      <button class="btn btn-ghost" data-action="logout">Logout</button>
+    </div>
+  </div>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section id="home" class="hero">
+      <div class="hero-bg" aria-hidden="true">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+      </div>
+      <div class="container hero-content">
+        <span class="badge" data-animate="fade-in">✦ Available for new projects</span>
+        <h1 data-animate="fade-up">Crafting <span class="grad-text">Premium Digital</span> Experiences</h1>
+        <p class="hero-sub" data-animate="fade-up">WebCraft Studio designs and builds fast, beautiful, conversion-focused websites — from sleek landing pages to full-scale web apps.</p>
+        <div class="hero-cta" data-animate="fade-up">
+          <a href="#projects" class="btn btn-primary btn-lg">View My Work</a>
+          <a href="#contact" class="btn btn-ghost btn-lg">Get In Touch</a>
+        </div>
+        <div class="hero-stats" data-stagger data-animate="fade-up">
+          <div class="stat" data-animate="fade-up"><span class="counter" data-count="120" data-suffix="+">0</span><small>Projects</small></div>
+          <div class="stat" data-animate="fade-up"><span class="counter" data-count="85" data-suffix="+">0</span><small>Happy Clients</small></div>
+          <div class="stat" data-animate="fade-up"><span class="counter" data-count="6" data-suffix="+">0</span><small>Years Experience</small></div>
+          <div class="stat" data-animate="fade-up"><span class="counter" data-count="12" data-suffix="">0</span><small>Awards</small></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT + SKILLS ============ -->
+    <section id="about" class="section">
+      <div class="container about-grid">
+        <div class="about-text" data-animate="slide-left">
+          <span class="section-kicker">About</span>
+          <h2 class="section-title">Design With Purpose, <span class="grad-text">Build With Passion</span></h2>
+          <p>WebCraft Studio is a one-person studio obsessed with detail. I blend clean design, solid engineering and modern tooling to ship products that feel effortless to use.</p>
+          <p>Every project is built mobile-first, performance-tuned and accessibility-aware — because premium means it works beautifully for <em>everyone</em>.</p>
+          <a href="#contact" class="btn btn-primary">Let's Work Together</a>
+        </div>
+        <div class="skills" data-stagger>
+          <div class="skill" data-animate="slide-right">
+            <div class="skill-head"><span>HTML &amp; CSS</span><span>95%</span></div>
+            <div class="bar"><div class="bar-fill" data-progress="95"></div></div>
+          </div>
+          <div class="skill" data-animate="slide-right">
+            <div class="skill-head"><span>JavaScript</span><span>92%</span></div>
+            <div class="bar"><div class="bar-fill" data-progress="92"></div></div>
+          </div>
+          <div class="skill" data-animate="slide-right">
+            <div class="skill-head"><span>React &amp; Vue</span><span>88%</span></div>
+            <div class="bar"><div class="bar-fill" data-progress="88"></div></div>
+          </div>
+          <div class="skill" data-animate="slide-right">
+            <div class="skill-head"><span>Firebase &amp; Node.js</span><span>84%</span></div>
+            <div class="bar"><div class="bar-fill" data-progress="84"></div></div>
+          </div>
+          <div class="skill" data-animate="slide-right">
+            <div class="skill-head"><span>UI / UX Design</span><span>78%</span></div>
+            <div class="bar"><div class="bar-fill" data-progress="78"></div></div>
+          </div>
+          <div class="skill" data-animate="slide-right">
+            <div class="skill-head"><span>SEO &amp; Performance</span><span>74%</span></div>
+            <div class="bar"><div class="bar-fill" data-progress="74"></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SERVICES ============ -->
+    <section id="services" class="section section-alt">
+      <div class="container">
+        <div class="section-head" data-animate="fade-up">
+          <span class="section-kicker">Services</span>
+          <h2 class="section-title">What I <span class="grad-text">Offer</span></h2>
+          <p>End-to-end services to take your idea from a sketch to a shipped product.</p>
+        </div>
+        <div class="services-grid" data-stagger>
+          <article class="card service-card" data-animate="fade-up">
+            <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+            <h3>Web Design</h3>
+            <p>Modern, conversion-focused layouts with premium typography and micro-interactions.</p>
+          </article>
+          <article class="card service-card" data-animate="fade-up">
+            <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18l6-6-6-6"/><path d="M8 6l-6 6 6 6"/></svg></div>
+            <h3>Web Development</h3>
+            <p>Hand-coded, vanilla-first builds and modern frameworks — fast, clean and maintainable.</p>
+          </article>
+          <article class="card service-card" data-animate="fade-up">
+            <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></div>
+            <h3>E-Commerce</h3>
+            <p>Secure storefronts with smooth checkout flows that turn browsers into buyers.</p>
+          </article>
+          <article class="card service-card" data-animate="fade-up">
+            <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg></div>
+            <h3>SEO Optimization</h3>
+            <p>Technical SEO, Core Web Vitals and semantic structure so customers find you first.</p>
+          </article>
+          <article class="card service-card" data-animate="fade-up">
+            <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg></div>
+            <h3>UI / UX Design</h3>
+            <p>Wireframes to polished design systems — intuitive flows backed by research.</p>
+          </article>
+          <article class="card service-card" data-animate="fade-up">
+            <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+            <h3>Maintenance &amp; Support</h3>
+            <p>Ongoing updates, monitoring and improvements so your site never falls behind.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS (live from Firestore) ============ -->
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-head" data-animate="fade-up">
+          <span class="section-kicker">Portfolio</span>
+          <h2 class="section-title">Featured <span class="grad-text">Projects</span></h2>
+          <p>Loaded live from the database — updates appear here instantly for every visitor.</p>
+        </div>
+        <div id="projects-grid" class="projects-grid" aria-live="polite">
+          <div class="grid-spinner"><div class="spinner"></div><p>Loading projects…</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section id="contact" class="section section-alt">
+      <div class="container">
+        <div class="section-head" data-animate="fade-up">
+          <span class="section-kicker">Contact</span>
+          <h2 class="section-title">Let's Build Something <span class="grad-text">Great</span></h2>
+          <p>Have a project in mind? Drop a message — it lands straight in the owner inbox.</p>
+        </div>
+        <div class="contact-grid">
+          <form id="contact-form" class="card contact-form" data-animate="slide-left" novalidate>
+            <div class="field">
+              <label for="contact-name">Name</label>
+              <input type="text" id="contact-name" name="name" placeholder="Your name" autocomplete="name" required />
+              <small class="field-error" id="err-contact-name"></small>
+            </div>
+            <div class="field">
+              <label for="contact-email">Email</label>
+              <input type="email" id="contact-email" name="email" placeholder="you@example.com" autocomplete="email" required />
+              <small class="field-error" id="err-contact-email"></small>
+            </div>
+            <div class="field">
+              <label for="contact-message">Message</label>
+              <textarea id="contact-message" name="message" rows="5" placeholder="Tell me about your project…" required></textarea>
+              <small class="field-error" id="err-contact-message"></small>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg" id="contact-submit">Send Message</button>
+          </form>
+          <div class="contact-info" data-animate="slide-right">
+            <div class="info-item card">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+              <div><strong>Email</strong><p>hello@webcraftstudio.com</p></div>
+            </div>
+            <div class="info-item card">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <div><strong>Location</strong><p>Remote — working worldwide</p></div>
+            </div>
+            <div class="info-item card">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              <div><strong>Response Time</strong><p>Usually within 24 hours</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="#home" class="brand"><img src="logo.jpg" alt="WebCraft Studio logo" class="brand-logo" /><span class="brand-name">WebCraft<em>Studio</em></span></a>
+        <p>Premium websites, crafted with care. Design, development and everything in between.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <a href="#home">Home</a><a href="#about">About</a><a href="#services">Services</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
+      </div>
+      <div class="footer-social">
+        <h4>Follow Me</h4>
+        <div class="social-row" data-stagger>
+          <a class="social-link" data-animate="fade-up" href="https://github.com" target="_blank" rel="noopener" aria-label="GitHub"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+          <a class="social-link" data-animate="fade-up" href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg></a>
+          <a class="social-link" data-animate="fade-up" href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.354 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+          <a class="social-link" data-animate="fade-up" href="https://x.com" target="_blank" rel="noopener" aria-label="Twitter / X"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          <a class="social-link" data-animate="fade-up" href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+          <a class="social-link" data-animate="fade-up" href="https://wa.me/10000000000" target="_blank" rel="noopener" aria-label="WhatsApp"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.365.195 1.881.118.574-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© <span id="year">2026</span> WebCraft Studio. All rights reserved.</p>
+        <p>Crafted with ♥ and vanilla code.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button id="back-to-top" aria-label="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>
+  </button>
+
+  <!-- ============ AUTH MODAL (Login / Register) ============ -->
+  <div class="modal-overlay" id="auth-modal" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="auth-title">
+      <button class="modal-close" data-close="auth-modal" aria-label="Close dialog"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+      <h2 id="auth-title">Welcome Back</h2>
+
+      <!-- Login view -->
+      <div class="auth-view active" id="view-login">
+        <form id="login-form" novalidate>
+          <div class="field"><label for="log-email">Email</label><input type="email" id="log-email" autocomplete="email" placeholder="you@example.com" required /></div>
+          <div class="field"><label for="log-pass">Password</label><input type="password" id="log-pass" autocomplete="current-password" placeholder="••••••••" required /></div>
+          <small class="form-error" id="log-error" role="alert"></small>
+          <button type="submit" class="btn btn-primary btn-block">Login</button>
+        </form>
+        <button class="btn btn-google btn-block"><svg width="18" height="18" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3C33.7 32.7 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.9 1.2 8 3l5.7-5.7C34.5 6.1 29.5 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.6-.4-3.9z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.9 1.2 8 3l5.7-5.7C34.5 6.1 29.5 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.3 0 10.2-2 13.9-5.3l-6.4-5.4C29.7 34.7 27 36 24 36c-5.3 0-9.7-3.4-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3c-.8 2.2-2.2 4.1-4.1 5.4l6.4 5.3C40.4 35.6 44 30.3 44 24c0-1.3-.1-2.6-.4-3.9z"/></svg>Continue with Google</button>
+        <p class="auth-switch">New here? <button type="button" data-view-switch="register">Create an account</button></p>
+      </div>
+
+      <!-- Register view -->
+      <div class="auth-view" id="view-register">
+        <form id="register-form" novalidate>
+          <div class="field"><label for="reg-name">Full Name</label><input type="text" id="reg-name" autocomplete="name" placeholder="Jane Doe" required /></div>
+          <div class="field"><label for="reg-email">Email</label><input type="email" id="reg-email" autocomplete="email" placeholder="you@example.com" required /></div>
+          <div class="field"><label for="reg-pass">Password</label><input type="password" id="reg-pass" autocomplete="new-password" placeholder="Min. 6 characters" required /><small class="field-hint">Use at least 6 characters.</small></div>
+          <small class="form-error" id="reg-error" role="alert"></small>
+          <button type="submit" class="btn btn-primary btn-block">Create Account</button>
+        </form>
+        <button class="btn btn-google btn-block"><svg width="18" height="18" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3C33.7 32.7 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.9 1.2 8 3l5.7-5.7C34.5 6.1 29.5 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.6-.4-3.9z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.9 1.2 8 3l5.7-5.7C34.5 6.1 29.5 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.3 0 10.2-2 13.9-5.3l-6.4-5.4C29.7 34.7 27 36 24 36c-5.3 0-9.7-3.4-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3c-.8 2.2-2.2 4.1-4.1 5.4l6.4 5.3C40.4 35.6 44 30.3 44 24c0-1.3-.1-2.6-.4-3.9z"/></svg>Continue with Google</button>
+        <p class="auth-switch">Already have an account? <button type="button" data-view-switch="login">Login</button></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ OWNER PASSCODE MODAL ============ -->
+  <div class="modal-overlay" id="passcode-modal" aria-hidden="true">
+    <div class="modal modal-sm" role="dialog" aria-modal="true" aria-labelledby="passcode-title">
+      <button class="modal-close" data-close="passcode-modal" aria-label="Close dialog"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+      <h2 id="passcode-title">🔒 Owner Verification</h2>
+      <p class="modal-sub">Enter the owner passcode to access this private area.</p>
+      <form id="passcode-form" novalidate>
+        <div class="field"><label for="passcode-input">Passcode</label><input type="password" id="passcode-input" autocomplete="off" placeholder="••••••••" required /></div>
+        <small class="form-error" id="passcode-error" role="alert"></small>
+        <button type="submit" class="btn btn-primary btn-block">Verify</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ============ OWNER INBOX MODAL ============ -->
+  <div class="modal-overlay" id="inbox-modal" aria-hidden="true">
+    <div class="modal modal-wide" role="dialog" aria-modal="true" aria-labelledby="inbox-title">
+      <button class="modal-close" data-close="inbox-modal" aria-label="Close dialog"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+      <h2 id="inbox-title">📥 Owner Inbox</h2>
+      <p class="modal-sub">Messages sent through the contact form.</p>
+      <div id="inbox-list" class="inbox-list"></div>
+    </div>
+  </div>
+
+  <!-- ============ ADMIN PANEL MODAL ============ -->
+  <div class="modal-overlay" id="admin-modal" aria-hidden="true">
+    <div class="modal modal-wide" role="dialog" aria-modal="true" aria-labelledby="admin-title">
+      <button class="modal-close" data-close="admin-modal" aria-label="Close dialog"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+      <h2 id="admin-title">🛠 Project Manager</h2>
+      <p class="modal-sub">Add, edit or remove projects — changes go live instantly.</p>
+
+      <form id="project-form" class="admin-form" novalidate>
+        <input type="hidden" id="pf-id" />
+        <div class="field"><label for="pf-title">Title</label><input type="text" id="pf-title" placeholder="Project title" required /></div>
+        <div class="field"><label for="pf-desc">Description</label><textarea id="pf-desc" rows="3" placeholder="Short description…" required></textarea></div>
+        <div class="field"><label for="pf-image">Image URL</label><input type="url" id="pf-image" placeholder="https://…/screenshot.jpg" /></div>
+        <div class="field"><label for="pf-tech">Tech Tags</label><input type="text" id="pf-tech" placeholder="React, Firebase, CSS" /><small class="field-hint">Comma-separated.</small></div>
+        <div class="field-row">
+          <div class="field"><label for="pf-live">Live URL</label><input type="url" id="pf-live" placeholder="https://… (optional)" /></div>
+          <div class="field"><label for="pf-github">GitHub URL</label><input type="url" id="pf-github" placeholder="https://… (optional)" /></div>
+        </div>
+        <small class="form-error" id="pf-error" role="alert"></small>
+        <div class="admin-form-actions">
+          <button type="submit" class="btn btn-primary" id="pf-submit">Add Project</button>
+          <button type="button" class="btn btn-ghost hidden" id="pf-cancel">Cancel Edit</button>
+        </div>
+      </form>
+
+      <h3 class="admin-list-title">Current Projects</h3>
+      <div id="admin-projects-list" class="admin-list"></div>
+    </div>
+  </div>
+
+  <!-- Toast container -->
+  <div id="toast-container" aria-live="polite"></div>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
